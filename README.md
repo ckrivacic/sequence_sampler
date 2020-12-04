@@ -8,9 +8,9 @@ to each song (how well does each song work as an opener?), and from each song to
 (how well does each song work as a closer?). It is easiest to take the example csv and 
 modify it with your scores.
 
-Requirements:
-numpy
-pandas
+Requirements:  
+numpy  
+pandas  
 
 Usage:
 ./sequence.py example_scores.csv
