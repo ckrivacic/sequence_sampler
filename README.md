@@ -23,6 +23,14 @@ numpy
 pandas  
 docopt
 
+# Installation
+Clone github repository:  
+`git clone https://github.com/ckrivacic/sequence_sampler.git`. 
+Move into cloned directory:  
+`cd sequence_sampler`  
+Install dependencies:  
+`./install.sh`  
+
 # Usage:
 
 `./sequence.py example_scores.csv`  
