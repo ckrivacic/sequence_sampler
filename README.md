@@ -18,7 +18,7 @@ Note that this is not a deterministic algorithm, and it is not
 parameterized to always find the highest scoring sequence; I didn't want
 to over-fit to scores that are subjective and fuzzy to begin with.
 
-## Requirements:  
+## Requirements  
 numpy  
 pandas  
 docopt
