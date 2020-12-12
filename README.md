@@ -18,12 +18,12 @@ Note that this is not a deterministic algorithm, and it is not
 parameterized to always find the highest scoring sequence; I didn't want
 to over-fit to scores that are subjective and fuzzy to begin with.
 
-Requirements:  
+## Requirements:  
 numpy  
 pandas  
 docopt
 
-# Installation
+## Installation
 Clone github repository:  
 `git clone https://github.com/ckrivacic/sequence_sampler.git`   
 Move into cloned directory:  
@@ -31,7 +31,7 @@ Move into cloned directory:
 Install dependencies:  
 `./install.sh`  
 
-# Usage:
+## Usage
 
 `./sequence.py example_scores.csv`  
 If you want to save a playlist with the final sequence, just point the 
