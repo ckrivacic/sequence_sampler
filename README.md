@@ -26,6 +26,6 @@ docopt
 # Usage:
 
 `./sequence.py example_scores.csv`  
-If you want to save a playlist with the final sequence, just point the. 
+If you want to save a playlist with the final sequence, just point the 
 script to a folder that contains audio files of your songs:  
 `./sequence.py example_scores.csv -f /path/to/songfiles`
