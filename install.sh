@@ -4,4 +4,5 @@ if which poetry ; then
 else
 	python3 -m pip install poetry
 fi
+poetry install
 
