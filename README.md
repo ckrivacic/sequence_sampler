@@ -12,6 +12,7 @@ Scores can be any number, including negatives, but between 0 and 10 seems to wor
 Requirements:  
 numpy  
 pandas  
+docopt
 
 Usage:
 ./sequence.py example_scores.csv

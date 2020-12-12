@@ -1,14 +1,21 @@
-#!/usr/bin/python3
+"""
+Usage: 
+    sequence.py <rankings_csv> [options]
+
+Options:
+    -f, --folder=[PATH]
+        Look for files that match the song names in the provided folder and
+        create an m3u playlist from the final sequence.
+"""
+
+
 import pandas as pd
 import numpy as np
-import sys, random
+import docopt
+import sys, random, os
 from copy import deepcopy
 from decimal import Decimal
-
-
-"""
-Usage: python sequence.py <rankings_csv>
-"""
+from difflib import get_close_matches
 
 
 class SeqSample(object):
@@ -89,9 +96,32 @@ class SeqSample(object):
         print(self.current)
 
 
+def match_files(sequence, folder):
+    # filelist = glob.glob(os.path.join(folder, '*.wav'))
+    folder = os.path.expanduser(folder)
+    filelist = os.listdir(folder)
+    match_dict = {}
+    for song in sequence:
+        match = get_close_matches(song, filelist, n=1, cutoff=0.1)
+        match_dict[song] = match[0]
+
+
+    with open(os.path.join(folder, 'sequence.m3u'), 'w') as f:
+        for song in sequence:
+            f.write(match_dict[song] + '\n')
+
+    print('Sequence written to {}'.format(
+        os.path.join(folder, 'sequence.m3u')
+        ))
+
 def main():
-    sampler = SeqSample(sys.argv[1])
+    args = docopt.docopt(__doc__)
+    sampler = SeqSample(args['<rankings_csv>'])
     sampler.main_loop()
+
+    if args['--folder']:
+        match_files(sampler.current, args['--folder'])
+
 
 if __name__=='__main__':
     main()
